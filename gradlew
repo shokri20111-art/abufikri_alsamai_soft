@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-#
-# Gradle start up script for POSIX systems
-#
 
-# تأكد من توجيه الأوامر لمجلد التطبيق
-./app/gradlew "$@"
+# محرك بناء أندرويد للأنظمة الذكية
+APP_HOME=$(pwd)
+gradle_version="8.0"
+
+if [ ! -f "$APP_HOME/gradlew" ]; then
+    echo "إعداد محرك البناء..."
+fi
+
+exec bash ./app/gradlew "$@"
