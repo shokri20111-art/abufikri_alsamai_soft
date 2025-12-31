@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Gradle Wrapper Script
+if [ -f "./gradlew" ]; then
+    chmod +x gradlew
+fi
+./gradle/wrapper/gradle-wrapper.jar
