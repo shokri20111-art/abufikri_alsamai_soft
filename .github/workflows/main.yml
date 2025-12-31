@@ -10,9 +10,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build with Gradle
+    - name: Build with Gradle
         run: |
-          chmod +x gradlew || true
+          # الانتقال لمجلد التطبيق والبدء بالبناء
+          cd app
+          chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v3
