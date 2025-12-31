@@ -12,7 +12,7 @@ jobs:
           distribution: 'temurin'
       - name: Build with Gradle
         run: |
-          chmod +x app/src/main/java/com/samai/soft/data/AppDatabase.kt || true
+          chmod +x gradlew || true
           ./gradlew assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v3
