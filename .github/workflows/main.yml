@@ -10,8 +10,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build APK
-        run: chmod +x gradlew && ./gradlew assembleDebug
+      - name: Build with Gradle
+        run: |
+          chmod +x app/src/main/java/com/samai/soft/data/AppDatabase.kt || true
+          ./gradlew assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
